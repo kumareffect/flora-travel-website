@@ -1,7 +1,15 @@
 $(document).ready(function () {
-    $("#menu-btn").on("click", function () {
-        $("#nav-links").toggleClass("showing");
-    });
+    // Menu toggle functionality
+    const menuBtn = document.querySelector("#menu-btn");
+    const navLinks = document.querySelector("header ul");
+    
+    if (menuBtn) {
+        menuBtn.addEventListener("click", function() {
+            if (navLinks) {
+                navLinks.classList.toggle("showing");
+            }
+        });
+    }
 
     $(".post-wrapper").slick({
         slidesToShow: 3,
