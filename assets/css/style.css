@@ -552,18 +552,37 @@ header .menu-toggle {
   header ul {
     width: 100%;
     background: #fbfbfb;
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
+    display: block;
   }
 
   header ul.showing {
-    max-height: 100em;
+    max-height: 500px;
     overflow: visible;
   }
 
   header ul li {
     width: 100%;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .nav__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav__links li {
+    margin: 0;
+  }
+
+  .nav__links a {
+    display: block;
+    padding: 12px 20px;
   }
 
   header ul li ul {
