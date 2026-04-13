@@ -12,7 +12,6 @@
                             <li><a href="<?php echo BASE_URL . '/services' ?>">Services</a></li>
                             <li><a href="<?php echo BASE_URL . '/projects' ?>">Projects</a></li>
                             <li><a href="<?php echo BASE_URL . '/tutorial' ?>">Tutorial</a></li>
-                           
                             <li><a href="<?php echo BASE_URL . '/contact' ?>">Contact</a></li>
 
                             <?php if (isset($_SESSION['id'])): ?>

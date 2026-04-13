@@ -13,7 +13,6 @@
     <ul class="nav__links" id="nav-links">
       <li><a href="<?php echo BASE_URL . '' ?>">HOME</a></li>
       <li><a href="#booking">BOOKING</a></li>
-      <li><a href="<?php echo BASE_URL . '/blog' ?>">BLOG</a></li>
       <li><a href="<?php echo BASE_URL . '/recruit' ?>">RECRUIT</a></li>
       <li><a href="<?php echo BASE_URL . '/services' ?>">MENU</a></li>
       <li><a href="<?php echo BASE_URL . '/contact' ?>">CONTACT</a></li>

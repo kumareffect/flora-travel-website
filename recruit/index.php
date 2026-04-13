@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Store uploaded resume in "uploads" directory
-    $resume = basename($_FILES['resume']['name']);
+    $resume = time() . "_" . basename($_FILES['resume']['name']);
     $targetFilePath = "uploads/" . $resume;
 
     // Check if the uploads directory exists, create if not
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the statement
         if ($stmt->execute()) {
-            echo "<p>New record created successfully</p>";
+            echo "<script>alert('Application submitted successfully!'); window.location.href='';</script>";
         } else {
             echo "<p>Error: " . $stmt->error . "</p>";
         }
@@ -98,56 +98,88 @@ $conn->close();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <style>
-        /* Your custom styles */
-        #header {
-            z-index: 999;
-        }
-        .dropdown-menu {
-            display: none;
-            position: fixed;
-            background-color: white;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            list-style: none;
-            padding: 10px;
-            z-index: 9999!important;
-        }
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label, input, textarea, select, button {
-            display: block;
-            width: 100%;
-            margin: 10px 0;
-        }
-        button {
-            background-color: #27ae60;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #219653;
-        }
-        .container {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .container.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2a5298;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #444;
+    border-left: 4px solid #2a5298;
+    padding-left: 10px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #2a5298;
+    outline: none;
+    box-shadow: 0 0 5px rgba(42,82,152,0.3);
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* animation */
+.container {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
     </style>
+
+    
 </head>
 <body>
     <?php include(ROOT_PATH . "/../app/includes/otherHeader.php"); ?>
