@@ -13,7 +13,6 @@
     <ul class="nav__links" id="nav-links">
       <li><a href="<?php echo BASE_URL . '' ?>">HOME</a></li>
       <li><a href="<?php echo BASE_URL . '/booking' ?>">BOOKING</a></li>
-      <li><a href="<?php echo BASE_URL . '/blog' ?>">BLOG</a></li>
       <li><a href="<?php echo BASE_URL . '/recruit' ?>">RECRUIT</a></li>
       <li><a href="<?php echo BASE_URL . '/services' ?>">MENU</a></li>
       <li><a href="<?php echo BASE_URL . '/contact' ?>">CONTACT</a></li>
@@ -33,7 +32,6 @@
               
               <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/booking/update'; ?>" >Booking Update</a></li>
               <?php endif; ?>
-              <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/admin/posts/create.php'; ?>" >Blog Update</a></li>
             <li><a href="<?php echo BASE_URL . '/php/logout.php'; ?>" class="logout">Logout</a></li>
           </ul>
         </li>
@@ -60,12 +58,12 @@
       <?php if($_SESSION['admin']): ?>
         <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/booking/update'; ?>" >Booking Update</a></li>
         <?php endif; ?>
-        <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/admin/posts/create.php'; ?>" >Blog Update</a></li>
+        
       <li><a href="<?php echo BASE_URL . '/php/logout.php'; ?>" class="logout">Logout</a></li>
     </ul>
   </li>
 <?php else: ?>
-  <li><a href="<?php echo BASE_URL . '/login'; ?>">Login</a></li>
+<li style="list-style: none;"><a href="../travel/login">LOGIN</a></li>
 <?php endif; ?>
 </ul>
 

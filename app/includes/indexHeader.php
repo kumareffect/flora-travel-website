@@ -33,7 +33,6 @@
               
               <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/booking/update'; ?>" >Booking Update</a></li>
               <?php endif; ?>
-              <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/admin/posts/create.php'; ?>" >Blog Update</a></li>
             <li><a href="<?php echo BASE_URL . '/php/logout.php'; ?>" class="logout">Logout</a></li>
           </ul>
         </li>
@@ -61,12 +60,11 @@
         
         <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/booking/update'; ?>" >Booking Update</a></li>
         <?php endif; ?>
-        <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/admin/posts/create.php'; ?>" >Blog Update</a></li>
       <li><a href="<?php echo BASE_URL . '/php/logout.php'; ?>" class="logout">Logout</a></li>
     </ul>
   </li>
 <?php else: ?>
-  <li><a href="../travel/login">Login</a></li>
+  <li style="list-style: none;"><a href="../travel/login">LOGIN</a></li>
 <?php endif; ?>
 </ul>
 

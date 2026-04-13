@@ -11,54 +11,45 @@ $cartItem = $shoppingCart->getMemberCartItem($member_id);
 $item_quantity = 0;
 $item_price = 0;
 
-// ✅ FIX: handle correct price key dynamically
+// ✅ calculate price
 if (is_array($cartItem) && !empty($cartItem)) {
     foreach ($cartItem as $item) {
-
-        $price = 0;
-
-        // check possible keys (important fix)
-        if (isset($item["price"])) {
-            $price = $item["price"];
-        } elseif (isset($item["product_price"])) {
-            $price = $item["product_price"];
-        }
-
-        if (isset($item["quantity"]) && $price > 0) {
-            $item_quantity += $item["quantity"];
-            $item_price += ($price * $item["quantity"]);
-        }
+        $item_quantity += $item["quantity"];
+        $item_price += ($item["price"] * $item["quantity"]);
     }
 }
 
 $order = 0;
-$name = $address = $district = ""; 
 
-if (!empty($_POST["proceed_payment"])) {
-    $name = $_POST['name'] ?? ''; 
-    $address = $_POST['address'] ?? '';
-    $district = $_POST['district'] ?? '';
+// ✅ get form data
+$name = $_POST['name'] ?? '';
+$address = $_POST['address'] ?? '';
+$city = $_POST['city'] ?? '';
+$state = $_POST['state'] ?? '';
+$zip = $_POST['zip'] ?? '';
+$country = $_POST['country'] ?? '';
+$arrival = $_POST['arrival'] ?? '';
+$leaving = $_POST['leaving'] ?? '';
+$guests = $_POST['guests'] ?? 1;
+
+// ✅ apply guests + days logic
+if ($arrival && $leaving) {
+    $days = (strtotime($leaving) - strtotime($arrival)) / (60 * 60 * 24);
+    $days = max($days, 1); // minimum 1 day
+} else {
+    $days = 1;
 }
 
-// ✅ only proceed if all fields exist
-if (!empty($name) && !empty($address) && !empty($district) && $item_price > 0) {
+$item_price = $item_price * $guests * $days;
+
+// ✅ insert order
+if (!empty($_POST["proceed_payment"]) && $item_price > 0) {
 
     $order = $shoppingCart->insertOrder($_POST, $member_id, $item_price);
 
-    if (!empty($order) && is_array($cartItem)) {
+    if (!empty($order)) {
         foreach ($cartItem as $item) {
-
-            $price = 0;
-
-            if (isset($item["price"])) {
-                $price = $item["price"];
-            } elseif (isset($item["product_price"])) {
-                $price = $item["product_price"];
-            }
-
-            if (isset($item["id"]) && $price > 0) {
-                $shoppingCart->insertOrderItem($order, $item["id"], $price);
-            }
+            $shoppingCart->insertOrderItem($order, $item["id"], $item["price"]);
         }
     }
 }

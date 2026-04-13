@@ -101,22 +101,29 @@ function addToCart($product_id, $member_id)
         return $this->updateDB($query, $params);
     }
     
-   function insertOrder($customer_detail, $member_id, $amount)
+  function insertOrder($customer_detail, $member_id, $amount)
 {
     $query = "INSERT INTO tbl_order 
-    (customer_id, amount, name, address, district, payment_type, order_status, order_at) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    (customer_id, amount, name, address, city, state, zip, country, arrival, leaving, payment_type, order_status, order_at) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $params = array(
         array("param_type" => "i", "param_value" => $member_id),
         array("param_type" => "d", "param_value" => $amount),
         array("param_type" => "s", "param_value" => $customer_detail["name"]),
         array("param_type" => "s", "param_value" => $customer_detail["address"]),
-        array("param_type" => "s", "param_value" => $customer_detail["district"]),
+        array("param_type" => "s", "param_value" => $customer_detail["city"]),
+        array("param_type" => "s", "param_value" => $customer_detail["state"]),
+        array("param_type" => "s", "param_value" => $customer_detail["zip"]),
+        array("param_type" => "s", "param_value" => $customer_detail["country"]),
+        array("param_type" => "s", "param_value" => $customer_detail["arrival"]),
+        array("param_type" => "s", "param_value" => $customer_detail["leaving"]),
         array("param_type" => "s", "param_value" => "PAYPAL"),
         array("param_type" => "s", "param_value" => "PENDING"),
         array("param_type" => "s", "param_value" => date("Y-m-d H:i:s"))
     );
+
+
 if ($amount <= 0) {
     die("Amount is 0 - check cart calculation");
 }

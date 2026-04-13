@@ -117,5 +117,14 @@ if (!empty($cartItem)) {
 <?php require_once "product-buy.php"; ?>
 <?php include(ROOT_PATH . "/../app/includes/otherFooter.php"); ?>
 <script src="../js/index-main.js"></script>
+
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
 </BODY>
 </HTML>

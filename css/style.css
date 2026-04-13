@@ -1,6 +1,13 @@
 #uk_slider {
   border-radius: 0;
 }
+li,
+a,
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
 .already_a {
   background-color: #ffffff;
   color: #3f3c56;
@@ -55,6 +62,9 @@
 }
 
 @media only screen and (max-width: 2000px) and (min-width: 959px) {
+  li {
+    text-decoration: none;
+  }
   #services {
     margin-top: -100px;
   }

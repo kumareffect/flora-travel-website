@@ -12,7 +12,7 @@
                             <li><a href="<?php echo BASE_URL . '/services' ?>">Services</a></li>
                             <li><a href="<?php echo BASE_URL . '/projects' ?>">Projects</a></li>
                             <li><a href="<?php echo BASE_URL . '/tutorial' ?>">Tutorial</a></li>
-                            <li><a href="<?php echo BASE_URL . '/blog' ?>">blog</a></li>
+                           
                             <li><a href="<?php echo BASE_URL . '/contact' ?>">Contact</a></li>
 
                             <?php if (isset($_SESSION['id'])): ?>
@@ -24,7 +24,6 @@
                                         <i class="fa fa-chevron-down" style="font-size: .8em;"></i></a>
                                     <ul>
                                         <?php if($_SESSION['admin']): ?>
-                                            <li><a style="text-decoration: none;" href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Blog Update</a></li>
 
                                         <li><a style="text-decoration: none;" href="<?php echo BASE_URL . '/projects/update'; ?>" >Project Update</a></li>
                                         <?php endif; ?>

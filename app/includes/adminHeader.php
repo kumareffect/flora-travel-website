@@ -10,7 +10,6 @@
                     <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
                 </a>
                 <ul>
-                    <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/admin/posts/create.php'; ?>" >Blog Update</a></li>
                 
                     <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/booking/update'; ?>" >Booking Update</a></li>
                     <li ><a href="<?php echo BASE_URL . '/php/logout.php' ?>" class="logout">Logout</a></li>

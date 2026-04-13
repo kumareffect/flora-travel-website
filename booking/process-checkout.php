@@ -64,29 +64,45 @@ if (! empty($cartItem)) {
             <div class="input-field">
                 <input type="text" name="address" PlaceHolder="Address" required>
             </div>
-        </div>
 
-        <div class="form-row">
-            <div class="input-field">
-                <input type="text" name="district" PlaceHolder="District" required>
+             <div class="input-field">
+                <input type="text" name="city" PlaceHolder="City" required>
+            </div>
+ </div>
+ <div class="form-row">
+             <div class="input-field">
+                <input type="text" name="state" PlaceHolder="State" required>
             </div>
 
-            
+
+              <div class="input-field">
+                <input type="text" name="zip" PlaceHolder="Zip" required>
+            </div>
+
+              <div class="input-field">
+                <input type="text" name="country" PlaceHolder="Country" required>
+            </div>
         </div>
+
+        
+           
+       
 
      
         </div>
 
         <div class="form-row">
         <div class="input-field">
-            <input type="number" placeholder="number of guests" name="guests" required>
+            <input type="number" placeholder="number of guests" value="1" hidden name="guests" required>
          </div>
     </div>
          <div class="input-field">
-            <input type="date" PlaceHolder="Arrival Date" name="arrivals" required>
-         </div>
-         <div class="input-field">
-            <input type="date" PlaceHolder="Leaving Date" name="leaving" required>
+            <label for="arrival">Arrival Date</label>
+            <input id="arrival" type="date" PlaceHolder="Arrival Date" name="arrival" required>
+        </div>
+        <div class="input-field">
+             <label for="leaving">Leaving Date</label>
+            <input id="leaving" type="date" PlaceHolder="Leaving Date" name="leaving" required>
          </div>
  
     </div>
