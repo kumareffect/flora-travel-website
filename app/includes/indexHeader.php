@@ -40,37 +40,7 @@
       <?php endif; ?>
     </ul>
 
-
-      <?php 
-      
-      if (isset($_SESSION['id'])): ?>
-
-<ul>
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle">
-      <i class="fa fa-user"></i>
-      <?php echo $_SESSION['username']; ?>
-      <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-    </a>
-
-    <!-- Dropdown menu -->
-    <ul class="dropdown-menu">
-      <?php if($_SESSION['admin']): ?>
-        
-        <li><a style="color: #1a1a1a;" href="<?php echo BASE_URL . '/booking/update'; ?>" >Booking Update</a></li>
-        <?php endif; ?>
-      <li><a href="<?php echo BASE_URL . '/php/logout.php'; ?>" class="logout">Logout</a></li>
-    </ul>
-  </li>
-<?php else: ?>
-  <li style="list-style: none;"><a href="../travel/login">LOGIN</a></li>
-<?php endif; ?>
-</ul>
-
-
-
     </nav>
-    </div>
 </header>
 
 
