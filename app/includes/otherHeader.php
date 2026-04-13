@@ -63,7 +63,7 @@
     </ul>
   </li>
 <?php else: ?>
-<li style="list-style: none;"><a href="../travel/login">LOGIN</a></li>
+  <li style="list-style: none;"><a href="<?php echo BASE_URL . '/login'; ?>">LOGIN</a></li>
 <?php endif; ?>
 </ul>
 
