@@ -1,7 +1,6 @@
 $(document).ready(function () {
-    $(".menu-toggle").on("click", function () {
-        $(".nav").toggleClass("showing");
-        $(".nav ul").toggleClass("showing");
+    $("#menu-btn").on("click", function () {
+        $("#nav-links").toggleClass("showing");
     });
 
     $(".post-wrapper").slick({
