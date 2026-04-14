@@ -1,73 +1,37 @@
 <?php
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 include("../include/path.php");
-define('ROOT_PATH', realpath(dirname(__FILE__)));
-
-
-
-session_start();
-
-
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: member");
-    exit;
-}
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "travel";
-
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $reason = $_POST['reason'];
-    $message = $_POST['message'];
-
-    $sql = "INSERT INTO `querry` (name, email, reason, message) VALUES ('$name', '$email', '$reason', '$message')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "<script type='text/javascript'>alert('We will get back to you soon!');</script>";
-    } else {
-        echo "<script type='text/javascript'>alert('Oops! Please try again after some time.');</script>";
-    }
-
-    mysqli_close($conn);
-}
+include(ROOT_PATH . "/../app/controllers/topics.php");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="zxx" dir="ltr">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Us</title>
-    <link rel="shortcut icon" href="../image/logo.png" type="image/png">
+    <meta name="theme-color" content="#2887ff" />
+    <meta name="description" content="Floria Travel." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta property="og:url" content="../services/" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="Services" />
+    <meta property="og:description" content="The Menu I provide" />
+    <meta property="og:image" itemprop="image" content="../image/3.jpg" />
+    <meta itemprop="image" content="../image/3.jpg">
+
+    <link rel="icon" type="title/png" href="../image/floria.png">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/index_styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <style>
-        body {
-            font-family: 'Nunito Sans', sans-serif;
-            background-color: #f0f2f5;
-        }
+    <title>Welcome to my website</title>
 
+    <script src="../js/uikit.js"></script>
+     <style>
+       
         .form-container {
             background-color: #fff;
             border-radius: 15px;
@@ -148,9 +112,10 @@ if (isset($_POST['submit'])) {
         }
     </style>
 </head>
-<body>
 
-<?php include(ROOT_PATH . "/../app/includes/otherHeader.php"); ?>
+<body>
+    <?php include(ROOT_PATH . "/../app/includes/otherHeader.php"); ?>
+
 
 <div id="contacts" class="uk-section uk-section-large">
     <div class="uk-container">
@@ -181,5 +146,9 @@ if (isset($_POST['submit'])) {
 <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199850.95534163553!2d57.22429435533848!3d-20.32676048548117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c423e443dd695%3A0xc1e6bfb2e928844!2sRivi%C3%A8re%20Noire%2C%20Mauritius!5e0!3m2!1sen!2sfr!4v1694282719824!5m2!1sen!2sfr" style="border:0; width:100%; height:400px;" allowfullscreen="" loading="lazy"></iframe>
 
 <?php include(ROOT_PATH . "/../app/includes/otherFooter.php"); ?>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+
 </body>
 </html>

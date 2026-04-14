@@ -23,82 +23,7 @@ include("include/path.php");
     <title>Floria Travel Website | A Meeting point for amateurs of green Tourism</title>
     
     <style>
-      #header {
-        z-index: 999;
-      }
 
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-
-      .dropdown-menu {
-        display: none; /* Hide by default */
-        position: fixed;
-        background-color: white;
-        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-        list-style: none;
-        padding: 10px;
-        z-index: 999;
-      }
-
-      .dropdown-menu li {
-        margin: 10px 0;
-      }
-
-      .dropdown-menu li a {
-        color: black;
-        text-decoration: none;
-        z-index: 999;
-      }
-
-      .dropdown-menu li a:hover {
-        background-color: #ddd;
-      }
-
-      /* Show dropdown on hover */
-      .dropdown:hover .dropdown-menu {
-        display: block;
-      }
-
-      /* Animation for destination cards */
-      .destination__card {
-        transition: transform 0.3s;
-      }
-      
-      .destination__card:hover {
-        transform: scale(1.05);
-      }
-
-      /* Zoom effect on ratings */
-      .client__rating span {
-        display: inline-block;
-        transition: transform 0.3s;
-      }
-
-      .client__rating span:hover {
-        transform: scale(1.3);
-      }
-
-      /* Swiper styling */
-      .swiper {
-        width: 100%;
-        height: 300px;
-      }
-
-      .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .client__card {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-      
     </style>
   </head>
   <body>
@@ -349,8 +274,14 @@ include("include/path.php");
 
     <?php include(ROOT_PATH . "/../app/includes/indexFooter.php"); ?>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
     <script>
       
       const swiper = new Swiper('.swiper', {

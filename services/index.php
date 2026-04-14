@@ -24,7 +24,8 @@ include(ROOT_PATH . "/../app/controllers/topics.php");
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/index_styles.css" />
+       <link rel="stylesheet" href="../css/index_styles.css" />
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Welcome to my website</title>
 
@@ -151,6 +152,8 @@ include(ROOT_PATH . "/../app/controllers/topics.php");
     </div>
 
     <?php include(ROOT_PATH . "/../app/includes/indexFooter.php"); ?>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>
